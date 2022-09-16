@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "AspNetCore6WebApiAuth.Data": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:49515;http://localhost:49516"
+    }
+  }
+}
