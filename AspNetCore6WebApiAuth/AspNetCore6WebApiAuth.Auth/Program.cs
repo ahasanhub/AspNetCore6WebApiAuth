@@ -1,3 +1,5 @@
+using AspNetCore6WebApiAuth.Auth.Data.Repository;
+using AspNetCore6WebApiAuth.Auth.Services.AuthService;
 using AspNetCore6WebApiAuth.Auth.Services.UserService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -13,6 +15,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddSwaggerGen(options =>
