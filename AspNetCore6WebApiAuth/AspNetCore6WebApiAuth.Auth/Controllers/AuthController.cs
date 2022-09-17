@@ -18,8 +18,7 @@ namespace AspNetCore6WebApiAuth.Auth.Controllers
     {
         private readonly IConfiguration _configuration;
         private readonly IUserService _userService;
-        private readonly IAuthService _authService;
-        //public static User user = new User();
+        private readonly IAuthService _authService;        
 
         public AuthController(IConfiguration configuration,IUserService userService,IAuthService authService)
         {
@@ -53,21 +52,7 @@ namespace AspNetCore6WebApiAuth.Auth.Controllers
         }
         [HttpPost("refresh-token")]
         public async Task<ActionResult<string>> RefreshToken()
-        {
-            //var refreshToken = Request.Cookies["refreshToken"];
-
-            //if (!user.RefreshToken.Equals(refreshToken))
-            //{
-            //    return Unauthorized("Invalid Refresh Token.");
-            //}
-            //else if (user.TokenExpires < DateTime.Now)
-            //{
-            //    return Unauthorized("Token expired.");
-            //}
-
-            ////string token = CreateToken(user);
-            ////var newRefreshToken = GenerateRefreshToken();
-            ////SetRefreshToken(newRefreshToken);
+        {           
             
             var response=await _authService.RefreshToken();
             if (response.Success)
