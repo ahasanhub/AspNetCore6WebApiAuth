@@ -1,9 +1,9 @@
-﻿namespace AspNetCore6WebApiAuth.Auth
+﻿namespace AspNetCore6WebApiAuth.Auth.Data.Models
 {
     public class RefreshToken
     {
         public string Token { get; set; } = string.Empty;
-        public DateTime TokenCreated { get; set; }=DateTime.Now;
+        public DateTime TokenCreated { get; set; } = DateTime.Now;
         public DateTime TokenExpires { get; set; }
     }
 }
